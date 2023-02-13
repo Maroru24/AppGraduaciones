@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateParticipantesTable extends Migration
+class CreateParticipanteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateParticipantesTable extends Migration
      */
     public function up()
     {
-        Schema::create('participantes', function (Blueprint $table) {
+        Schema::create('participante', function (Blueprint $table) {
             $table->id();
+            $table->string();
             $table->timestamps();
         });
     }
