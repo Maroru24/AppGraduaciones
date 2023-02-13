@@ -18,7 +18,7 @@ class CreateParticipantesTable extends Migration
             $table->string("nombre",30);
             $table->string("mail",30);
             $table->string("pass",30);
-            $table->integer('idAdmin');
+            $table->unsignedBigInteger('idAdmin');
             $table->foreign('idAdmin')->references('id')->on('participantes');
             $table->timestamps();
         });

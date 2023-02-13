@@ -18,7 +18,7 @@ class CreateInvitadosTable extends Migration
             $table->string("nombre",30);
             $table->string("mail",30);
             $table->string("pass",30);
-            $table->integer('idParticipante');
+            $table->unsignedBigInteger('idParticipante');
             $table->foreign('idParticipante')->references('id')->on('participantes');
             
             $table->timestamps();
