@@ -14,10 +14,11 @@ class CreateGraduacionesTable extends Migration
     public function up()
     {
         Schema::create('graduaciones', function (Blueprint $table) {
-            $table->id("idGrad");
-            $table->string("nombreT",50);
+            $table->id();
+            $table->string("titulacion",50);
             $table->string("promocion",20);
-            $table->foreign('idAdmin')->references('idParticipante')->on('participante');
+            $table->integer('idAdmin');
+            $table->foreign('idAdmin')->references('id')->on('participantes');
             $table->timestamps();
         });
     }

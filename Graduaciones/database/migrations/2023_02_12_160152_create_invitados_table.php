@@ -14,11 +14,12 @@ class CreateInvitadosTable extends Migration
     public function up()
     {
         Schema::create('invitados', function (Blueprint $table) {
-            $table->id("idInvitado");
+            $table->id();
             $table->string("nombre",30);
             $table->string("mail",30);
             $table->string("pass",30);
-            $table->foreign('idParticipante')->references('idParticipante')->on('participante');
+            $table->integer('idParticipante');
+            $table->foreign('idParticipante')->references('id')->on('participantes');
             
             $table->timestamps();
         });

@@ -14,12 +14,12 @@ class CreateParticipantesTable extends Migration
     public function up()
     {
         Schema::create('participantes', function (Blueprint $table) {
-            $table->id("idParticipante");
+            $table->id();
             $table->string("nombre",30);
             $table->string("mail",30);
             $table->string("pass",30);
-            $table->foreign('idGrad')->references('idGrad')->on('graduacion');
-            
+            $table->integer('idAdmin');
+            $table->foreign('idAdmin')->references('id')->on('participantes');
             $table->timestamps();
         });
     }

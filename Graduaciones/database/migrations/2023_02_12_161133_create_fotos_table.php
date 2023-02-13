@@ -14,9 +14,10 @@ class CreateFotosTable extends Migration
     public function up()
     {
         Schema::create('fotos', function (Blueprint $table) {
-            $table->id("idFoto");
+            $table->id();
             $table->string("ruta", 60);
-            $table->foreign('idGrad')->references('idGrad')->on('graduacion');
+            $table->integer('idGrad');
+            $table->foreign('idGrad')->references('id')->on('graduaciones');
             $table->timestamps();
         });
     }
